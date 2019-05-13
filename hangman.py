@@ -92,4 +92,8 @@ def play(game_id):
 # Main
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # server side logs
+    # log file storing API calls, sucess and failure of each 
+    logging.basicConfig(filename='error.log', level=logging.INFO)
+    # Allows multiple threads
+    app.run(debug=True, threaded=True)
